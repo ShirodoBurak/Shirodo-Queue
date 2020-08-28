@@ -26,7 +26,6 @@ Any advise for common problems or issues.
 Contributors names and contact info
 
 Mail    :   mburakkaya@yahoo.com
-Discord :   BurakKaya#0833
 
 
 
@@ -37,4 +36,4 @@ Discord :   BurakKaya#0833
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE file for details
