@@ -16,10 +16,6 @@ import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Command;
 
-/**
- *
- * @author stajyer
- */
 public class COMMAND_liste extends Command {
     
     public COMMAND_liste(String liste) {

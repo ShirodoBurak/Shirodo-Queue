@@ -8,10 +8,6 @@ package me.shirodo.queue.data;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author stajyer
- */
 public class Lists {
     public static List<String> queue = new ArrayList();
     public static List<String> prioQueue = new ArrayList();

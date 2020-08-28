@@ -5,17 +5,6 @@ import java.util.ListIterator;
 import me.shirodo.queue.ShirodoQueue;
 import net.md_5.bungee.api.ChatColor;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author stajyer
- */
 public class DataInspector {
 
     public static void toQueue(String player){
