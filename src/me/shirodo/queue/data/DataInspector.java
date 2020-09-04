@@ -6,19 +6,17 @@ import me.shirodo.queue.ShirodoQueue;
 import net.md_5.bungee.api.ChatColor;
 
 public class DataInspector {
-
+    //
     public static void toQueue(String player){
         try{
             Lists.queue.add(player);
-            
             ShirodoQueue.getMessage(ChatColor.GREEN+"- "+player+ChatColor.GRAY+" isimli üye sıraya eklendi.");
-
         }
         catch(Exception ex){
             ShirodoQueue.getMessage(ChatColor.DARK_RED+" 29. Satır DataInspector.java\n" + ex);
         }
-
     }
+    //
     public static void toPriority(String player){
         try{
             Lists.prioQueue.add(player);
@@ -28,7 +26,7 @@ public class DataInspector {
             ShirodoQueue.getMessage(ChatColor.DARK_RED+" 39. Satır DataInspector.java\n" + ex);
         } 
     }
-    
+    //
     public static void removeFromQueue(String player){
         ListIterator<String> Iterator = Lists.queue.listIterator();
         ListIterator<String> prioIterator = Lists.prioQueue.listIterator();
@@ -47,4 +45,5 @@ public class DataInspector {
             }
         }
     }
+    //
 }

@@ -15,7 +15,6 @@ Shirodo Queue creates a simple queue and inserts any new player into it. Prevent
 ### Installing
 
 * Put the ShirodoQueue.jar into your Server/Plugins folder and start your server.
-* Edit the config.cfg inside the Server/Plugins/ShirodoQueue anyway you like.
 
 ## Help
 

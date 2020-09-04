@@ -1,6 +1,7 @@
 package me.shirodo.queue;
 
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import me.shirodo.commands.COMMAND_liste;
@@ -35,10 +36,12 @@ public class ShirodoQueue extends Plugin implements Listener{
             @Override
             public void run() {
                 int i = 0;
-                if (!Lists.queue.isEmpty()) {
-                    for (String pname : Lists.queue) {
+                List<String> queue = Lists.queue;
+                List<String> prioQueue = Lists.prioQueue;
+                if (!queue.isEmpty()) {
+                    for (String pname : queue) {
                     i++;
-                        getProxy().getPlayer(pname).sendMessage(new TextComponent(prefix_Info+ChatColor.GRAY+"Sıra bilgisi : "+ChatColor.GRAY+"["+i+"/"+Lists.queue.size()+"]" ));   
+                        getProxy().getPlayer(pname).sendMessage(new TextComponent(prefix_Info+ChatColor.GRAY+"Sıra bilgisi : "+ChatColor.GRAY+"["+i+"/"+queue.size()+"]" ));
                     if (advert == 6) {
                         getProxy().getPlayer(pname).sendMessage(new TextComponent(prefix_Warn+"Sunucumuza 10TL ve üzeri bağış yaparak öncelikli sıraya girebilir ve çok daha hızlı bir şekilde oyuna katılabilirsin! (Her ay yenilenmelidir)"));
                         advert = 0;
@@ -51,8 +54,8 @@ public class ShirodoQueue extends Plugin implements Listener{
                     getLogger().log(Level.INFO, "S\u0131ra tamamen bo\u015f. Mesaj g\u00f6nderilecek \u00fcye yok.", prefix_Info);
                 }
                 int j = 0;
-                if (!Lists.prioQueue.isEmpty()) {
-                    for (String pname : Lists.prioQueue) {
+                if (!prioQueue.isEmpty()) {
+                    for (String pname : prioQueue) {
                         j++;
                         getProxy().getPlayer(pname).sendMessage(new TextComponent(prefix_Info+ChatColor.RESET+"Öncelikli sıra bilgisi : "+ChatColor.GOLD+"["+j+"/"+Lists.prioQueue.size()+"]" ));
                     }
@@ -63,14 +66,12 @@ public class ShirodoQueue extends Plugin implements Listener{
                 }
         }, 20, 20, TimeUnit.SECONDS); 
     }
+    //
     @Override
     public void onDisable(){
     
     }
-    
-    /**
-     *
-     */
+    //
     public void sendPlayerToGame(){
         ProxiedPlayer prioPlayer = null;
         ProxiedPlayer player = null;
@@ -96,6 +97,7 @@ public class ShirodoQueue extends Plugin implements Listener{
         }
         
     }
+    //
     public static void getMessage(String message){
         tellMsg = message;
     }
@@ -105,10 +107,11 @@ public class ShirodoQueue extends Plugin implements Listener{
             getMessage(null);
         }else{}
     }
+    //
     public void tellLogger(String msg){
         getLogger().info(msg);     
     } 
-    
+    //
      /*+Events+*/
     @EventHandler
     public void onPostLogin(PostLoginEvent joined) {
@@ -125,15 +128,15 @@ public class ShirodoQueue extends Plugin implements Listener{
             tellLogger("HATA, NULLPOINTEREXCEPTION : " + joined);
         }
     }
-    
+    //
     @EventHandler
     public static void onPlayerDisconnect(PlayerDisconnectEvent quit){
         DataInspector.removeFromQueue(quit.getPlayer().getName());
     }
     /*-Events-*/
-
     private void RegisterCommands() {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new COMMAND_liste("liste"));
         getLogger().info(prefix_Info + "Commands registered!");
     }
+    //
 }
