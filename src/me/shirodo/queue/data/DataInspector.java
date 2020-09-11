@@ -33,7 +33,7 @@ public class DataInspector {
         while(Iterator.hasNext()){
                 String playerName = Iterator.next();
                 if (playerName.equals(player)) {
-                Iterator.remove();         
+                Iterator.remove();
                 ShirodoQueue.getMessage(ChatColor.RED+player+ChatColor.GRAY+" isimli üye sıradan çıkartıldı.");
             }
         }

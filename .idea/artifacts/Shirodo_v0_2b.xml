@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Shirodo-v0.2b">
+    <output-path>$USER_HOME$/Desktop/Compiled Plugins/artifacts/Shirodo_v0_2b</output-path>
+    <root id="archive" name="Shirodo-v0.2b.jar">
+      <element id="module-output" name="Shirodo" />
+    </root>
+  </artifact>
+</component>
