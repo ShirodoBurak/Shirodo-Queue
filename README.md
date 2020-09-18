@@ -29,6 +29,9 @@ Mail    :   mburakkaya@yahoo.com
 
 
 ## Version History
+
+* 0.3(W.I.P)
+    * Added Discord bot support for anyone that wants to connect list information into its own Discord server.
 * 0.2
     * Fixed the ConcurrentModificationException in ShirodoQueue.java
 * 0.1

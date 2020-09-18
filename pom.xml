@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>Burak_Kaya</groupId>
     <artifactId>Shirodo</artifactId>
-    <version>0.4</version>
+    <version>0.3</version>
     <name>Shirodo</name>
     <repositories>
         <repository>
