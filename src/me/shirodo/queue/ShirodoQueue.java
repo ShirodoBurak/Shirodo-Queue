@@ -4,6 +4,7 @@ package me.shirodo.queue;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import me.shirodo.commands.COMMAND_liste;
+import me.shirodo.discord.MessageListener;
 import me.shirodo.queue.data.DataInspector;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ProxyServer;
@@ -17,6 +18,8 @@ import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
+import javax.security.auth.login.LoginException;
+
 public class ShirodoQueue extends Plugin implements Listener{
 
     private int advert = 0;
@@ -26,9 +29,15 @@ public class ShirodoQueue extends Plugin implements Listener{
     public static String prefix_Danger = ChatColor.DARK_GRAY+""+ChatColor.BOLD+"["+ChatColor.RESET+"Shirodo"+ChatColor.DARK_GRAY+ChatColor.BOLD+"]" + ChatColor.RED + " ";
     public static String prefix_Error = ChatColor.DARK_GRAY+""+ChatColor.BOLD+"["+ChatColor.RESET+"Shirodo"+ChatColor.DARK_GRAY+ChatColor.BOLD+"]" + ChatColor.DARK_RED + " ";
     public static String prefix_Success = ChatColor.DARK_GRAY+""+ChatColor.BOLD+"["+ChatColor.RESET+"Shirodo"+ChatColor.DARK_GRAY+ChatColor.BOLD+"]" + ChatColor.GREEN + " ";
+    public MessageListener bot = new MessageListener();
 
     @Override
     public void onEnable(){
+        try {
+            bot.enable();
+        } catch (LoginException e) {
+            getLogger().log(Level.SEVERE, "Bot token is not set, please enter the bot token.", prefix_Danger);
+        }
         RegisterCommands();
         getProxy().getPluginManager().registerListener(this, this);
         ProxyServer.getInstance().getScheduler().schedule(this, new Runnable() {
@@ -67,7 +76,6 @@ public class ShirodoQueue extends Plugin implements Listener{
     public void onDisable(){
 
     }
-
     /**
      *
      */

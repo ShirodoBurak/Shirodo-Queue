@@ -29,7 +29,8 @@ Mail    :   mburakkaya@yahoo.com
 
 
 ## Version History
-
+* 0.2
+    * Fixed the ConcurrentModificationException in ShirodoQueue.java
 * 0.1
     * First Release
 

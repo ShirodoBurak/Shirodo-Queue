@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Shirodo" target="1.7" />
+      <module name="Shirodo" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
