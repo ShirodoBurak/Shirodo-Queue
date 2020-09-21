@@ -20,6 +20,8 @@ import net.md_5.bungee.event.EventHandler;
 
 import javax.security.auth.login.LoginException;
 
+import static me.shirodo.discord.MessageListener.botEnable;
+
 public class ShirodoQueue extends Plugin implements Listener{
 
     private int advert = 0;
@@ -29,14 +31,13 @@ public class ShirodoQueue extends Plugin implements Listener{
     public static String prefix_Danger = ChatColor.DARK_GRAY+""+ChatColor.BOLD+"["+ChatColor.RESET+"Shirodo"+ChatColor.DARK_GRAY+ChatColor.BOLD+"]" + ChatColor.RED + " ";
     public static String prefix_Error = ChatColor.DARK_GRAY+""+ChatColor.BOLD+"["+ChatColor.RESET+"Shirodo"+ChatColor.DARK_GRAY+ChatColor.BOLD+"]" + ChatColor.DARK_RED + " ";
     public static String prefix_Success = ChatColor.DARK_GRAY+""+ChatColor.BOLD+"["+ChatColor.RESET+"Shirodo"+ChatColor.DARK_GRAY+ChatColor.BOLD+"]" + ChatColor.GREEN + " ";
-    public MessageListener bot = new MessageListener();
 
     @Override
     public void onEnable(){
         try {
-            bot.enable();
+            botEnable();
         } catch (LoginException e) {
-            getLogger().log(Level.SEVERE, "Bot token is not set, please enter the bot token.", prefix_Danger);
+            getLogger().log(Level.SEVERE, e.toString(), prefix_Danger);
         }
         RegisterCommands();
         getProxy().getPluginManager().registerListener(this, this);
