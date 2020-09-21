@@ -10,6 +10,7 @@ Shirodo Queue creates a simple queue and inserts any new player into it. Prevent
 
 ### Dependencies
 
+* JDASpigot must be installed on your Bungeecord server. You can find it from <a href="https://www.spigotmc.org/resources/jdaspigot.41074/">here</a>. (Thank you <a href="https://github.com/UnnamedCheese">UnnamedCheese</a>)!
 * A ready Bungeecord server and a Bukkit ready Minecraft server
 
 ### Installing
