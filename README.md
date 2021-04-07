@@ -4,14 +4,14 @@ A basic Minecraft Bungeecord plugin to prevent bot attacks.
 
 ## Description
 
-Shirodo Queue creates a simple queue and inserts any new player into it. Preventing any spam bot attacks.
+Shirodo Queue is a simple queue plugin which prevents players/bots to join so fast and puts them into a queue.
+Get some chips or some coffee and prepare, you are going to wait a lot 😎
 
 ## Getting Started
 
 ### Dependencies
 
-* JDASpigot must be installed on your Bungeecord server. You can find it from <a href="https://www.spigotmc.org/resources/jdaspigot.41074/">here</a>. (Thank you <a href="https://github.com/UnnamedCheese">UnnamedCheese</a>!)
-* A ready Bungeecord server and a Bukkit ready Minecraft server
+* A ready Spigot/Bukkit server with a Bungeecord
 
 ### Installing
 
@@ -31,8 +31,8 @@ Mail    :   mburakkaya@yahoo.com
 
 ## Version History
 
-* 0.3
-    * Added Discord bot support for anyone that wants to connect list information into its own Discord server.
+* ~~0.3
+    ~~* Added Discord bot support for anyone that wants to connect list information into its own Discord server.
 * 0.2
     * Fixed the ConcurrentModificationException in ShirodoQueue.java
 * 0.1
